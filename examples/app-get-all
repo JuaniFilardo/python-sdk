@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# A Ravello SDK example showing all applications in a user account in format: 
+# A Ravello SDK example showing all applications in a user account in format:
 # Application name, ID, Creation Time, Owner, If published, Region
 #
 # Copyright 2011-2016 Ravello Systems, Inc.
@@ -34,11 +34,11 @@ def print_apps(apps):
 	for app in apps:
 		creation_time = datetime.datetime.fromtimestamp(app['creationTime']/1000).strftime('%Y-%m-%d %H:%M')
 		if app['published']:
-			print('Application name: {0:<50} ID: {1:<10} Creation Date: {2:<20} Owner: {3:<25} Published: yes    Region: {4:<10}'.format(app['name'].encode('utf-8'),app['id'],creation_time,app['ownerDetails']['name'],app['deployment']['cloudRegion']['name']))
+			print('Application name: {0:<50} ID: {1:<10} Creation Date: {2:<20} Owner: {3:<25} Published: yes    Region: {4:<10}'.format(app['name'],app['id'],creation_time,app['ownerDetails']['name'],app['deployment']['cloudRegion']['name']))
 		else:
-			print('Application name: {0:<50} ID: {1:<10} Creation Date: {2:<20} Owner: {3:<25} Published: no'.format(app['name'].encode('utf-8'),app['id'],creation_time,app['ownerDetails']['name'],app['published']))
-		
-		
+			print('Application name: {0:<50} ID: {1:<10} Creation Date: {2:<20} Owner: {3:<25} Published: no'.format(app['name'],app['id'],creation_time,app['ownerDetails']['name'],app['published']))
+
+
 def main():
 	parser = mkparser()
 	args = parser.parse_args()

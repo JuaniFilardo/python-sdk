@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# A Ravello SDK example showing list of all applications and their cost in a specific month/year   
+# A Ravello SDK example showing list of all applications and their cost in a specific month/year
 #
 # Copyright 2011-2016 Ravello Systems, Inc.
 #
@@ -39,7 +39,7 @@ def set_billing_period(args):
 
 	if not month:
 		month = now.month
- 
+
 	if not year:
 		year = now.year
 
@@ -51,8 +51,8 @@ def print_billing_info(bi):
 		for charge in app['charges']:
 			price += charge['summaryPrice']
 
-		print('Application name: {0:<50} Owner: {1:<25} Price: {2:8.2f}'.format(app['appName'].encode('utf-8'),app['owner'],price))
-		
+		print('Application name: {0:<50} Owner: {1:<25} Price: {2:8.2f}'.format(app['appName'],app['owner'],price))
+
 def main():
 	parser = mkparser()
 	args = parser.parse_args()
@@ -72,7 +72,7 @@ def main():
 	#Get List of applications with billing info
 	bi = client.get_billing_for_month(year,month)
 
-		
+
 	#Display billing info
 	print_billing_info(bi)
 

@@ -43,7 +43,7 @@ def get_vms(app_id, client):
 def print_vms(vms,out_file):
 	if vms:
 		for vm in vms:
-			print('Name: {0:<40} ID: {1:<20} State: {2}'.format(vm['name'].encode('utf-8'),vm['id'], vm['state']))
+			print('Name: {0:<40} ID: {1:<20} State: {2}'.format(vm['name'],vm['id'], vm['state']))
 
 #		print (json.dumps(vms, indent=5))
 
